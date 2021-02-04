@@ -7,7 +7,7 @@ using namespace std;
 
 //Init.
 INIReader::INIReader(const char* file){
-    cout << "make" << endl;
+
     ifstream a(file);
     string b;
 
@@ -17,7 +17,6 @@ INIReader::INIReader(const char* file){
     string currentGroup;
 
     if(a.is_open()){
-            cout << "open" << endl;
             while( getline( a, b) ){
                  cout << b << endl;
                     if(isGroup(b)){
@@ -28,7 +27,6 @@ INIReader::INIReader(const char* file){
                             b = stripComments(b);
                             currentGroup = getGroup(b);
                             cout << currentGroup << endl;
-                            cout << "group" << endl;
                     }else if(isKeyPair(b)){
 
                         b = stripComments(b);
@@ -40,7 +38,6 @@ INIReader::INIReader(const char* file){
                         tm.insert(pair< string, string >(c, d));
                         cout << c << endl;
                         cout << d << endl;
-                        cout << "keypair" << endl;
 
                     }
 
@@ -56,9 +53,7 @@ INIReader::INIReader(const char* file){
 
 //Returns value in key within group.
 string INIReader::getValue(string group, string key){
-    cout << "Looking for: " << group << endl;
     map<string, map<string, string> >::iterator g = groups.find(group);
-    cout << "Looking for: " << key << endl;
     map<string, string>::iterator k = g->second.find(key);
     return k->second;
 
