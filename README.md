@@ -1,7 +1,8 @@
 # INIUtil
 A very simply INI utility written in c++
 
-#Features
--Writing to ini
--Reading from ini
--Sorting keys and values into groups.
+<h2>#Features</h2></br>
+-Writing to ini</br>
+-Reading from ini</br>
+-Sorting keys and values into groups.</br>
+-Comments
