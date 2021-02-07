@@ -6,6 +6,7 @@ A very simply INI utility written in c++
 -Reading from ini</br>
 -Sorting keys and values into groups.</br>
 -Comments</br></br>
-
-<h2>Unsupported</h2></br>
 -Nesting groups inside of groups</br>
+
+<h3>#unsupported</h3>
+-One liners
