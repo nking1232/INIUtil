@@ -8,5 +8,8 @@ A very simply INI utility written in c++
 -Comments</br></br>
 -Nesting groups inside of groups</br>
 
-<h3>#unsupported</h3>
+<h3>#Unsupported</h3>
 -One liners
+
+<h3>#Notes</h3>
+When compiling a debug build define __DEBUG__.
