@@ -3,8 +3,13 @@
 
 #include <map>
 #include <string>
+#include <list>
+
+
 
 using namespace std;
+
+class INIGroup;
 
 class INIReader{
 public:
@@ -16,7 +21,11 @@ protected:
 
     bool isGroup(string);
 
+    bool isGroupEnd(string, string);
+
     bool isKeyPair(string);
+
+    INIGroup* getGroupFromName(string);
 
     string getGroup(string);
 
@@ -26,16 +35,11 @@ protected:
 
     string stripComments(string);
 
+    string removeWhitespaces(string a);
+
 private:
 
-    map< string, map < string, string> > groups;
-    std::map< string, map< string, string> >::iterator groupStart;
-    std::map< string, map< string, string> >::iterator currentGroup;
-
-    std::map<string, string>::iterator keyPairStart;
-    std::map<string, string>::iterator currentKeyPair;
-
-
+    list<INIGroup*> groups;
 
 };
 

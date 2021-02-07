@@ -2,12 +2,13 @@
 #define INIWRITER_HPP_INCLUDED
 
 #include <string>
-#include <map>
+#include <list>
 #include <iostream>
 #include <fstream>
 
-
 using namespace std;
+
+class INIGroup;
 
 
 class INIWriter{
@@ -16,11 +17,17 @@ public:
 
     INIWriter(string);
 
+    void addChildtoGroup(string, string);
+
     void addGroup(string);
 
     void addKey(string, string, string);
 
+    INIGroup* getGroupFromName(string a);
+
     void write();
+
+    ofstream file;
 
 protected:
 
@@ -28,9 +35,7 @@ protected:
 
 private:
 
-    ofstream file;
-
-    map< string, map< string, string > > groups;
+    list< INIGroup* > groups;
 
 };
 
